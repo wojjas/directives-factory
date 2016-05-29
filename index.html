@@ -70,9 +70,6 @@
 			<date-picker id="dtp" context='birth' date="DatePickerTestCtrl.selectedDate"></date-picker>
 			Selected Date: <strong>{{DatePickerTestCtrl.selectedDate | date : 'yyyy-MM-dd' }}</strong>
 		</div>
-		<div>
-			<!--<p>Selected Date: <strong>{{DatePickerTestCtrl.selectedDate | date : 'yyyy-MM-dd' }}</strong></p>-->
-		</div>
 	</form>
 </section>
 
@@ -85,7 +82,7 @@
 		Can be set to allow zero or not.
 	</pre>
 	<form class="form-inline">
-		<div class="form-control">
+		<div class="form-group">
 			<label for="ni">Enter some Number</label>
 			<input id="ni" type="text" ng-model="NumericInputTestCtrl.someNumber" numeric-input max-value="99000" old-value="{{NumericInputTestCtrl.someNumber}}">
 			Parsed Number: <strong>{{NumericInputTestCtrl.someNumber}}</strong>
