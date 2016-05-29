@@ -47,3 +47,16 @@ directiveFactory.controller('DatePickerTestController',  [function () {
 	}
 }]);
 
+directiveFactory.controller('NumericInputTestCtrl',  [function () {
+	var vm = this;
+
+	vm.someNumber = null;
+	vm.activate = activate;
+
+	activate();
+
+	function activate(){
+
+	}
+}]);
+

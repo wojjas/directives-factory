@@ -21,11 +21,17 @@
 	<script src="datePicker/date_picker_directive.js"></script>
 	<script src="datePicker/date_picker_controller.js"></script>
 
+	<!--Numeric Input-->
+	<script src="numeric-input/numeric_input_directive.js"></script>
 </head>
 
 <style>
 	.page-margin{
 		margin: 5px;
+	}
+
+	h2{
+		margin-top: 55px;
 	}
 </style>
 
@@ -68,7 +74,23 @@
 			<!--<p>Selected Date: <strong>{{DatePickerTestCtrl.selectedDate | date : 'yyyy-MM-dd' }}</strong></p>-->
 		</div>
 	</form>
+</section>
 
+<section>
+	<h2>Numeric Input</h2>
+	<pre>
+		Input that only takes positive numeric values.
+		Can be set to accept decimals or not.
+		Min and Max values can be set as well.
+		Can be set to allow zero or not.
+	</pre>
+	<form class="form-inline">
+		<div class="form-control">
+			<label for="ni">Enter some Number</label>
+			<input id="ni" type="text" ng-model="NumericInputTestCtrl.someNumber" numeric-input max-value="99000" old-value="{{NumericInputTestCtrl.someNumber}}">
+			Parsed Number: <strong>{{NumericInputTestCtrl.someNumber}}</strong>
+		</div>
+	</form>
 </section>
 
 </body>
