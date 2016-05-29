@@ -1,0 +1,21 @@
+{
+  "name": "directiveFactory",
+  "authors": [
+    "wojjas"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "www.proxoft.se",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.6"
+  }
+}

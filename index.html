@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="wjDirectiveFactory">
+<head>
+	<meta charset="UTF-8">
+	<title>Directives Factory</title>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="app.js"></script>
+
+	<!--Loading-->
+
+	<script src="loading/loading_directive.js"></script>
+	<script src="loading/loading_controller.js"></script>
+	<link rel="stylesheet" href="resources/font-awesome-4.6.3/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<h1>Directives Factory</h1>
+
+<p>This is a test-page showing/testing the directives of this project</p>
+
+<section ng-controller="LoadingTestController as LoadingTestCtrl">
+	<h2>Loading</h2>
+	<pre>
+		Use to show a message when something takes time.
+		For example a "Loading..." in place of where a table
+		will be shown when data is fully loaded.
+	</pre>
+
+	<p>
+		<button ng-click="LoadingTestCtrl.startLoading()">Load</button>
+	</p>
+
+	<loading-message delay="500" message="Loading some data..."
+					 is-loading="LoadingTestCtrl.isLoading"></loading-message>
+	<p ng-if="!LoadingTestCtrl.isLoading">{{LoadingTestCtrl.loadedData}}</p>
+
+</section>
+
+</body>
+</html>
