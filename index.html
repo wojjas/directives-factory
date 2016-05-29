@@ -8,14 +8,28 @@
 	<script src="app.js"></script>
 
 	<!--Loading-->
-
 	<script src="loading/loading_directive.js"></script>
 	<script src="loading/loading_controller.js"></script>
 	<link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
 
+	<!--Date Time Picker-->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!--Angular UI Bootstrap (needed for date-picker), http://angular-ui.github.io/bootstrap/-->
+	<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="datePicker/date_picker_directive.js"></script>
+	<script src="datePicker/date_picker_controller.js"></script>
+
 </head>
 
-<body>
+<style>
+	.page-margin{
+		margin: 5px;
+	}
+</style>
+
+<body class="page-margin">
 
 <h1>Directives Factory</h1>
 
@@ -30,12 +44,30 @@
 	</pre>
 
 	<p>
-		<button ng-click="LoadingTestCtrl.startLoading()">Load</button>
+		<button class="btn btn-default" ng-click="LoadingTestCtrl.startLoading()">Load</button>
 	</p>
 
 	<loading-message delay="500" message="Loading some data..."
 					 is-loading="LoadingTestCtrl.isLoading"></loading-message>
 	<p ng-if="!LoadingTestCtrl.isLoading">{{LoadingTestCtrl.loadedData}}</p>
+</section>
+
+<section ng-controller="DatePickerTestController as DatePickerTestCtrl">
+	<h2>Date Time Picker</h2>
+	<pre>
+		Drop-down date picker
+	</pre>
+	<!--Yeah, bootstrap is used here and NB the date-picker template uses it as well-->
+	<form class="form-inline">
+		<div class="form-group">
+			<label for="dtp">Select a date</label>
+			<date-picker id="dtp" context='birth' date="DatePickerTestCtrl.selectedDate"></date-picker>
+			Selected Date: <strong>{{DatePickerTestCtrl.selectedDate | date : 'yyyy-MM-dd' }}</strong>
+		</div>
+		<div>
+			<!--<p>Selected Date: <strong>{{DatePickerTestCtrl.selectedDate | date : 'yyyy-MM-dd' }}</strong></p>-->
+		</div>
+	</form>
 
 </section>
 

@@ -2,7 +2,10 @@
  *
  */
 
-var directiveFactory = angular.module('wjDirectiveFactory', []);
+var directiveFactory = angular.module('wjDirectiveFactory', [
+	'ui.bootstrap',
+	'ngAnimate'
+]);
 
 directiveFactory.controller('LoadingTestController',  ['$timeout', function ($timeout) {
 	var vm = this;
@@ -28,6 +31,19 @@ directiveFactory.controller('LoadingTestController',  ['$timeout', function ($ti
 			vm.isLoading = false;
 			vm.loadedData = 'Hej, hop, now we got: Some Data!';
 		}, 2000);
+	}
+}]);
+
+directiveFactory.controller('DatePickerTestController',  [function () {
+	var vm = this;
+
+	vm.selectedDate = null;
+	vm.activate = activate;
+
+	activate();
+
+	function activate(){
+
 	}
 }]);
 

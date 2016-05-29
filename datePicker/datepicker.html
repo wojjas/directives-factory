@@ -1,0 +1,16 @@
+<div class="input-group">
+	<input type="text" class="form-control"
+		   uib-datepicker-popup="{{DatePickerCtrl.format}}"
+		   ng-model="DatePickerCtrl.date"
+		   is-open="DatePickerCtrl.opened"
+		   min-date="DatePickerCtrl.minDate"
+		   max-date="DatePickerCtrl.maxDate"
+		   starting-day="{{DatePickerCtrl.startingDay}}"
+		   show-weeks="{{DatePickerCtrl.showWeeks}}"
+		   ng-disabled="DatePickerCtrl.disabled"
+	/>
+	<a href="" class="input-group-addon" ng-click="DatePickerCtrl.handleOpen($event)"
+	   ng-show="!DatePickerCtrl.disabled">
+		<i class="fa fa-calendar fa-fw" aria-hidden="true"></i>
+	</a>
+</div>
