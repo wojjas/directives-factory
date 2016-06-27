@@ -23,6 +23,10 @@
 
 	<!--Numeric Input-->
 	<script src="numeric-input/numeric_input_directive.js"></script>
+	<!--Clearing Input-->
+	<script src="clearing-input/clearing_input_directive.js"></script>
+	<script src="clearing-input/clearing_input_controller.js"></script>
+
 </head>
 
 <style>
@@ -86,6 +90,32 @@
 			<label for="ni">Enter some Number</label>
 			<input id="ni" type="text" ng-model="NumericInputTestCtrl.someNumber" numeric-input max-value="99000" old-value="{{NumericInputTestCtrl.someNumber}}">
 			Parsed Number: <strong>{{NumericInputTestCtrl.someNumber}}</strong>
+		</div>
+	</form>
+</section>
+
+<section ng-controller="ClearingInputTestController as ClearingInputTestCtrl">
+	<h2>Clearing Input</h2>
+	<pre>
+		Clears value upon focus.
+		The clearing doesn't affect the external value, the one given to this directive through an attribute,
+		only the internal one, what is seen in the input field.
+		Entering a new value however instantly affects the external value.
+		Changing the external value is instantly reflected in this field.
+		If nothing entered, original value re-appears. (not affecting external value)
+		(looks/feels cooler than selecting on focus)
+		(similar to using a placeholder, if that's sufficient use a placeholder instead)
+	</pre>
+	<form class="form-inline">
+		<div class="form-group">
+			<label>Enter some Number</label>
+			<clearing-input external-value="ClearingInputTestCtrl.someValue"></clearing-input>
+		</div>
+	</form>
+	<form class="form-inline">
+		<div class="form-group">
+			<label>Dummy Filed to Change Focus to (and value in the test-ctrl, the one using the directive)</label>
+			<input type="text" ng-model="ClearingInputTestCtrl.someValue">
 		</div>
 	</form>
 </section>

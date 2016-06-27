@@ -60,3 +60,16 @@ directiveFactory.controller('NumericInputTestCtrl',  [function () {
 	}
 }]);
 
+directiveFactory.controller('ClearingInputTestController',  [function () {
+	var vm = this;
+
+	vm.someValue = null;
+	vm.activate = activate;
+
+	activate();
+
+	function activate(){
+		vm.someValue = '13';
+	}
+}]);
+
